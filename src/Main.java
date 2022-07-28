@@ -43,17 +43,20 @@ class Main {
                     continue;
                 }
                 countProduct = Integer.parseInt(strCountProduct);
-                if (countProduct <= 0) {
-                    System.out.println("Некорректное количество");
-                    continue;
-                }
+
             } catch (NumberFormatException e) {
                 System.out.println("Введены некорректные данные");
                 continue;
             }
+            if (countProduct == 0) {
 
+                basket[indexProduct] = 0;
+
+            } else {
+                
             sumProducts += price[indexProduct] * countProduct;
             basket[indexProduct] += countProduct;
+            }
 
 
         }
