@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Main {
@@ -17,6 +18,7 @@ class Main {
             for (int i = 0; i < products.length; i++) {
                 System.out.println((i + 1) + ": " + products[i] + " " + price[i] + " руб/шт.");
             }
+            System.out.println("В акции 3 по цене 2-х участвуют товары: "+Arrays.toString(productsStock));
 
             String input = scanner.nextLine();
             if (input.equals("end")) {
