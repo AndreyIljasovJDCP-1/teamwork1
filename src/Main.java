@@ -44,17 +44,24 @@ class Main {
                     continue;
                 }
                 countProduct = Integer.parseInt(strCountProduct);
-                if (countProduct <= 0) {
-                    System.out.println("Некорректное количество");
-                    continue;
-                }
+
             } catch (NumberFormatException e) {
                 System.out.println("Введены некорректные данные");
                 continue;
             }
 
 
-            basket[indexProduct] += countProduct;
+            if (countProduct == 0) {
+
+                basket[indexProduct] = 0;
+
+            } else {
+
+                basket[indexProduct] += countProduct;
+            }
+
+
+
 
 
         }
@@ -62,7 +69,7 @@ class Main {
 
         for (int i = 0; i < basket.length; i++) {
             boolean discount = false;
-            if (basket[i] != 0) {
+            if (basket[i] > 0) {
                 for (int j = 0; j < productsStock.length; j++) {
                     if (products[i].equals(productsStock[j])) {
                         discount = true;
